@@ -16,7 +16,7 @@ public class Dames extends Application {
         Pane pane = new VBox();
         Plateau plateau = new Plateau();
 
-        Scene scene = new Scene(plateau.loadPlateau(pane), 1000, 1000);
+        Scene scene = new Scene(plateau.loadPlateauStructure(pane), 1000, 1000);
         stage.setTitle("Dames");
         stage.setScene(scene);
         stage.show();
