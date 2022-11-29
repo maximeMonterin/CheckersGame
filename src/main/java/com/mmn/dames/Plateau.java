@@ -12,9 +12,8 @@ public class Plateau {
     //ATTRIBUTS
     private final int NB_CASES_NOIRES = 50;
     private final int NB_CASES_BLANCHES = 50;
-    private final int NB_CASES_TOTALES = NB_CASES_BLANCHES + NB_CASES_NOIRES;
 
-    private Case[][] matricePlateau = new Case[10][10];
+    private final Case[][] matricePlateau = new Case[10][10];
 
     //CONSTRUCTOR
     public Plateau() {}
@@ -65,6 +64,6 @@ public class Plateau {
     }
 
     public int getNB_CASES_TOTALES() {
-        return NB_CASES_TOTALES;
+        return NB_CASES_BLANCHES + NB_CASES_NOIRES;
     }
 }
