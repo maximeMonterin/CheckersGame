@@ -5,7 +5,7 @@ public class Case {
     private boolean usage;
     private int posX;
     private int posY;
-    private Pion pion;
+    private Pion pion = null;
 
     public Case(boolean usage, int posX, int posY) {
         this.usage = usage;
@@ -43,5 +43,15 @@ public class Case {
 
     public void setPion(Pion pion) {
         this.pion = pion;
+    }
+
+    @Override
+    public String toString() {
+        return "Case{" +
+                "usage=" + usage +
+                ", posX=" + posX +
+                ", posY=" + posY +
+                ", pion=" + pion.toString() +
+                '}';
     }
 }

@@ -34,4 +34,13 @@ public class Pion {
     public void setCouleur(String couleur) {
         this.couleur = couleur;
     }
+
+    @Override
+    public String toString() {
+        return "Pion{" +
+                "posX=" + posX +
+                ", posY=" + posY +
+                ", couleur='" + couleur + '\'' +
+                '}';
+    }
 }
