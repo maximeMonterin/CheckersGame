@@ -18,6 +18,8 @@ public class Dames extends Application {
         Plateau plateau = new Plateau();
 
         Scene scene = new Scene(plateau.loadPlateauStructure(pane), 1000, 1000);
+
+        stage.setResizable(false);
         stage.setTitle("Dames");
         stage.setScene(scene);
         stage.getIcons().add(new Image("C:\\Users\\under\\IdeaProjects\\Dames\\images\\black_pion.png"));
