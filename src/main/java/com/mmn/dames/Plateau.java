@@ -2,6 +2,7 @@ package com.mmn.dames;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
@@ -21,41 +22,36 @@ public class Plateau {
     //CONSTRUCTOR
     public Plateau() {}
 
-    public Pane loadPlateauStructure(Pane pane) throws IOException {
-        Case caseMatrice;
-
-        int cptLigne = 0;
-
-        File filePlateau = new File(getClass().getResource("/com/mmn/dames/plateau.txt").toExternalForm());
+    public void loadPlateauStructure(GridPane pane) throws IOException {
         Image brownCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/brown_case.png").toExternalForm());
         Image skinCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/skin_case.png").toExternalForm());
 
-        BufferedReader reader = new BufferedReader(new FileReader(filePlateau));
+        for(int ligne = 0; ligne < 10 ; ++ligne){
+            Image currentImage;
+            if (ligne % 2 == 0) {
+                currentImage = brownCaseImg;
+            } else {
+                currentImage = skinCaseImg;
+            }
 
-        String line = reader.readLine();
+            for(int colonne = 0 ; colonne < 10 ; ++colonne) {
 
-        while(line != null){
-            HBox linePlateau = new HBox();
-            for(int i = 0 ; i < line.length() ; ++i){
-                if(Character.getNumericValue(line.charAt(i)) == 0){
-                    caseMatrice = new Case(false, i, cptLigne);
-                    matricePlateau[cptLigne][i] = caseMatrice;
-                    linePlateau.getChildren().add(new ImageView(brownCaseImg));
-                }
-                else{
-                    caseMatrice = new Case(false, i, cptLigne);
-                    matricePlateau[cptLigne][i] = caseMatrice;
-                    linePlateau.getChildren().add(new ImageView(skinCaseImg));
+                pane.add(new ImageView(currentImage), colonne, ligne);
+                matricePlateau[ligne][colonne] = new Case(false, colonne, ligne);
+
+                if (currentImage == skinCaseImg) {
+                    currentImage = brownCaseImg;
+                } else {
+                    currentImage = skinCaseImg;
                 }
             }
-            ++cptLigne;
-            pane.getChildren().add(linePlateau);
-            line = reader.readLine();
         }
 
-        reader.close();
-
-        return pane;
+        for(int i = 0; i < 10 ; ++i){
+            for(int j = 0; j < 10 ; ++j){
+                System.out.println(matricePlateau[i][j].toString());
+            }
+        }
     }
 
     //GETTERS

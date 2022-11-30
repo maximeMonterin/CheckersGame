@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -14,10 +15,11 @@ public class Dames extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        Pane pane = new VBox();
+        GridPane pane = new GridPane();
         Plateau plateau = new Plateau();
+        plateau.loadPlateauStructure(pane);
 
-        Scene scene = new Scene(plateau.loadPlateauStructure(pane), 1000, 1000);
+        Scene scene = new Scene(pane, 1000, 1000);
 
         stage.setResizable(false);
         stage.setTitle("Dames");
