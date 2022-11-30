@@ -142,18 +142,6 @@ public class Plateau {
     }
 
     //GETTERS
-    public int getNB_CASES_NOIRES() {
-        return NB_CASES_NOIRES;
-    }
-
-    public int getNB_CASES_BLANCHES() {
-        return NB_CASES_BLANCHES;
-    }
-
-    public int getNB_CASES_TOTALES() {
-        return NB_CASES_BLANCHES + NB_CASES_NOIRES;
-    }
-
     public Case[][] getMatricePlateau() {
         return matricePlateau;
     }
