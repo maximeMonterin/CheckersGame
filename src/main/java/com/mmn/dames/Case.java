@@ -6,6 +6,7 @@ public class Case {
     private int posX;
     private int posY;
     private Pion pion = null;
+    private char color;
 
     public Case(boolean usage, int posX, int posY) {
         this.usage = usage;
@@ -45,13 +46,20 @@ public class Case {
         this.pion = pion;
     }
 
+    public char getColor() {
+        return color;
+    }
+    public void setColor(char color) {
+        this.color = color;
+    }
+
     @Override
     public String toString() {
         return "Case{" +
                 "usage=" + usage +
                 ", posX=" + posX +
                 ", posY=" + posY +
-                ", pion=" + pion.toString() +
+                ", color=" + color +
                 '}';
     }
 }

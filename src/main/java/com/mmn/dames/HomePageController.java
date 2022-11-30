@@ -2,13 +2,10 @@ package com.mmn.dames;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,7 +38,7 @@ public class HomePageController extends VBox {
     }
 
     @FXML
-    private void onHelloButtonClick() throws IOException {
+    private void onPlayButtonClick() throws IOException {
         Scene scene = new Dames().loadGame();
         scene.getStylesheets().add(getClass().getResource("styleDamesPage.css").toExternalForm());
         this.primaryStage.setScene(scene);
