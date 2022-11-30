@@ -1,7 +1,9 @@
 package com.mmn.dames;
 
+import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import java.io.*;
 
@@ -15,7 +17,7 @@ public class Plateau {
     //CONSTRUCTOR
     public Plateau() {}
 
-    public void loadPlateauStructure(GridPane pane) throws IOException {
+    public void loadPlateauStructure(GridPane pane) {
         Image brownCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/brown_case.png").toExternalForm(), 85, 85, false, false);
         Image skinCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/skin_case.png").toExternalForm(), 85, 85, false, false);
 
@@ -33,7 +35,8 @@ public class Plateau {
                 matricePlateau[ligne][colonne] = new Case(false, colonne, ligne);
 
                 if (ligne != 4 && ligne != 5 && colonne % 2 == 0 && ligne % 2 == 0) {matricePlateau[ligne][colonne].setColor('M');}
-                if (ligne != 4 && ligne != 5 && colonne % 2 != 0 && ligne % 2 != 0) {matricePlateau[ligne][colonne].setColor('M');}
+                else if (ligne != 4 && ligne != 5 && colonne % 2 != 0 && ligne % 2 != 0) {matricePlateau[ligne][colonne].setColor('M');}
+                else {matricePlateau[ligne][colonne].setColor('S');}
 
                 if (currentImage == skinCaseImg) {
                     currentImage = brownCaseImg;
@@ -44,7 +47,7 @@ public class Plateau {
         }
     }
 
-    public void loadPlateauPion(GridPane pane) throws IOException {
+    public void loadPlateauPion(GridPane pane) {
         Image blackPionImg = new Image(getClass().getResource("/com/mmn/dames/images/black_pion.png").toExternalForm(), 75, 75, false, false);
         Image whitePionImg = new Image(getClass().getResource("/com/mmn/dames/images/white_pion.png").toExternalForm(), 75, 75, false, false);
 
@@ -60,6 +63,19 @@ public class Plateau {
                 }
             }
         }
+    }
+
+    public void clickOnGridPane(GridPane pane) {
+        pane.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                double caseY = event.getY() / 100;
+                if(caseY > (int) (caseY) + 0.05){++caseY;}
+                if(caseY < (int) (caseY) + 0.05){--caseY;}
+
+                System.out.println("Vous avez cliqué sur " + caseY);
+            }
+        });
     }
 
     //GETTERS

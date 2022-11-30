@@ -15,6 +15,7 @@ public class Dames {
         Plateau plateau = new Plateau();
         plateau.loadPlateauStructure(pane);
         plateau.loadPlateauPion(pane);
+        plateau.clickOnGridPane(pane);
 
         Scene scene = new Scene(pane, 900, 900);
 
