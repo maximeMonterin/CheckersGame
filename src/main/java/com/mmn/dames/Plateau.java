@@ -101,6 +101,18 @@ public class Plateau {
                 if(caseYEvent > 7 && caseYEvent < 7.9){caseY = 8;}
                 if(caseYEvent > 7.9){caseY = 9;}
 
+                //Ajustement des coordonées du clique pour obtenir la case correspondante en X
+                if(caseXEvent < 1.09){caseX = 0;}
+                if(caseXEvent > 1.09 && caseXEvent < 1.95){caseX = 1;}
+                if(caseXEvent > 1.95 && caseXEvent < 2.8){caseX = 2;}
+                if(caseXEvent > 2.8 && caseXEvent < 3.6){caseX = 3;}
+                if(caseXEvent > 3.6 && caseXEvent < 4.5){caseX = 4;}
+                if(caseXEvent > 4.5 && caseXEvent < 5.3){caseX = 5;}
+                if(caseXEvent > 5.3 && caseXEvent < 6.2){caseX = 6;}
+                if(caseXEvent > 6.2 && caseXEvent < 7){caseX = 7;}
+                if(caseXEvent > 7 && caseXEvent < 7.9){caseX = 8;}
+                if(caseXEvent > 7.9){caseX = 9;}
+
                 System.out.println("Vous avez cliqué sur " + caseY + " " + caseX);
             }
         });
