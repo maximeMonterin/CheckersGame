@@ -2,8 +2,11 @@ package com.mmn.dames;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -12,6 +15,10 @@ import java.io.IOException;
 
 public class HomePageController extends VBox {
     private Stage primaryStage;
+
+    @FXML
+    private ImageView logo;
+
 
     public HomePageController(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -29,14 +36,19 @@ public class HomePageController extends VBox {
     }
 
     @FXML
-    protected void onHelloButtonClick() throws IOException {
+    private void initialize() {
+        this.logo.setImage(new Image(getClass().getResource("images/logo-dame.png").toExternalForm(), 400, 200, false, false));
+    }
+
+    @FXML
+    private void onHelloButtonClick() throws IOException {
         Scene scene = new Dames().loadGame();
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("styleDamesPage.css").toExternalForm());
         this.primaryStage.setScene(scene);
     }
 
     @FXML
-    protected void onQuitButtonClick() {
+    private void onQuitButtonClick() {
         this.primaryStage.close();
     }
 }

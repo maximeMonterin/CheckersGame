@@ -3,3 +3,7 @@
     -fx-background-size: 900 900;
     -fx-background-position: center;
 }
+
+#logo{
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0.2, 0, 0);
+}
