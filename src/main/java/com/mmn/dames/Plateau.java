@@ -17,6 +17,12 @@ public class Plateau {
     //CONSTRUCTOR
     public Plateau() {}
 
+    /*
+     * loadPlateauStructure(GridPane pane) {}
+     * Cette méthode permet de générer la structure du tableau
+     * Elle ajoute dans la matrice représentant le plateau les cases avec différentes couleurs (M si un pion doit y etre mit, S sinon)
+     * Elle ajoute également dans notre GridPane les images des cases de notre damier
+     */
     public void loadPlateauStructure(GridPane pane) {
         Image brownCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/brown_case.png").toExternalForm(), 85, 85, false, false);
         Image skinCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/skin_case.png").toExternalForm(), 85, 85, false, false);
@@ -47,6 +53,12 @@ public class Plateau {
         }
     }
 
+    /*
+     * loadPlateauPion(GridPane pane) {}
+     * Cette méthode permet de générer les pions sur notre damier
+     * Elle ajoute dans les cases composantes de la matrice du plateau les pions qui doivent y être stockées
+     * Elle ajoute également dans notre GridPane les images des pions et les affiche au bon endroit
+     */
     public void loadPlateauPion(GridPane pane) {
         Image blackPionImg = new Image(getClass().getResource("/com/mmn/dames/images/black_pion.png").toExternalForm(), 75, 75, false, false);
         Image whitePionImg = new Image(getClass().getResource("/com/mmn/dames/images/white_pion.png").toExternalForm(), 75, 75, false, false);
@@ -56,10 +68,12 @@ public class Plateau {
                 if ((ligne <= 3) && matricePlateau[ligne][colonne].getColor() == 'M'){
                     pane.add(new ImageView(blackPionImg), colonne, ligne);
                     matricePlateau[ligne][colonne].setPion(new Pion(colonne, ligne, "Noir"));
+                    matricePlateau[ligne][colonne].setUsage(true);
                 }
                 if ((6 <= ligne && ligne <= 9) && matricePlateau[ligne][colonne].getColor() == 'M'){
                     pane.add(new ImageView(whitePionImg), colonne, ligne);
                     matricePlateau[ligne][colonne].setPion(new Pion(colonne, ligne, "Blanc"));
+                    matricePlateau[ligne][colonne].setUsage(true);
                 }
             }
         }

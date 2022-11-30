@@ -2,6 +2,7 @@ package com.mmn.dames;
 
 public class Case {
     //ATTRIBUTS
+    //Permet de gérer les colllisions entre pions
     private boolean usage;
     private int posX;
     private int posY;
