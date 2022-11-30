@@ -15,6 +15,13 @@ public class Case {
         this.posY = posY;
     }
 
+    public Case(boolean usage, int posX, int posY, Pion pion) {
+        this.usage = usage;
+        this.posX = posX;
+        this.posY = posY;
+        this.pion = pion;
+    }
+
     public boolean isUsage() {
         return usage;
     }
@@ -56,11 +63,21 @@ public class Case {
 
     @Override
     public String toString() {
-        return "Case{" +
+        String str = "";
+        if(pion != null){ str = "Case{" +
                 "usage=" + usage +
                 ", posX=" + posX +
                 ", posY=" + posY +
                 ", color=" + color +
-                '}';
+                ", pion=" + pion.toString() +
+                '}';}
+        else{ str = "Case{" +
+                "usage=" + usage +
+                ", posX=" + posX +
+                ", posY=" + posY +
+                ", color=" + color +
+                '}';}
+
+        return str;
     }
 }

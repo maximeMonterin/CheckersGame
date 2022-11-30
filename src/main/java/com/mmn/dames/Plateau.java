@@ -5,14 +5,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import java.io.*;
 
 public class Plateau {
     //ATTRIBUTS
     private final int NB_CASES_NOIRES = 50;
     private final int NB_CASES_BLANCHES = 50;
 
-    private final Case[][] matricePlateau = new Case[10][10];
+    private Case[][] matricePlateau = new Case[10][10];
 
     //CONSTRUCTOR
     public Plateau() {}
@@ -79,18 +78,24 @@ public class Plateau {
         }
     }
 
-    public void clickOnCase(GridPane pane) {
+    /*
+     * clickOnCase(GridPane pane) {}
+     * Cette méthode permet de récuprér la case que séléctionne le joueur
+     */
+    public Case clickOnCase(GridPane pane, Case[][] matricePlateau) {
+        Case currentCase = new Case(false, 0, 0);
+        Pion pion = new Pion(0, 0, "Null");
         pane.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+
             @Override
             public void handle(MouseEvent event) {
                 double caseYEvent = event.getY() / 100;
                 double caseXEvent = event.getX() / 100;
 
                 int caseY = 0;
-                int caseX = (int) caseXEvent;
+                int caseX = 0;
 
                 //Ajustement des coordonées du clique pour obtenir la case correspondante en Y
-                if(caseYEvent < 1.09){caseY = 0;}
                 if(caseYEvent > 1.09 && caseYEvent < 1.95){caseY = 1;}
                 if(caseYEvent > 1.95 && caseYEvent < 2.8){caseY = 2;}
                 if(caseYEvent > 2.8 && caseYEvent < 3.6){caseY = 3;}
@@ -102,7 +107,6 @@ public class Plateau {
                 if(caseYEvent > 7.9){caseY = 9;}
 
                 //Ajustement des coordonées du clique pour obtenir la case correspondante en X
-                if(caseXEvent < 1.09){caseX = 0;}
                 if(caseXEvent > 1.09 && caseXEvent < 1.95){caseX = 1;}
                 if(caseXEvent > 1.95 && caseXEvent < 2.8){caseX = 2;}
                 if(caseXEvent > 2.8 && caseXEvent < 3.6){caseX = 3;}
@@ -113,9 +117,27 @@ public class Plateau {
                 if(caseXEvent > 7 && caseXEvent < 7.9){caseX = 8;}
                 if(caseXEvent > 7.9){caseX = 9;}
 
-                System.out.println("Vous avez cliqué sur " + caseY + " " + caseX);
+                currentCase.setColor('S');
+                pion.setCouleur("");
+                currentCase.setPion(null);
+
+                if((caseY <= 3) && (matricePlateau[caseY][caseX].getColor() == 'M')){
+                    pion.setCouleur("Noir"); pion.setPosX(caseX); pion.setPosY(caseY);
+                    currentCase.setColor('M'); currentCase.setUsage(true); currentCase.setPion(pion);
+                }
+                if ((6 <= caseY && caseY <= 9) && (matricePlateau[caseY][caseX].getColor() == 'M')){
+                    pion.setCouleur("Blanc"); pion.setPosX(caseX); pion.setPosY(caseY);
+                    currentCase.setColor('M'); currentCase.setUsage(true); currentCase.setPion(pion);
+                }
+
+                //System.out.println(matricePlateau[caseY][caseX].toString());
+                currentCase.setPosX(caseX); currentCase.setPosY(caseY);
+                System.out.println("Vous avez cliqué sur la case => [" + currentCase.toString() + ']');
             }
+
         });
+        return currentCase;
+
     }
 
     //GETTERS
@@ -129,5 +151,9 @@ public class Plateau {
 
     public int getNB_CASES_TOTALES() {
         return NB_CASES_BLANCHES + NB_CASES_NOIRES;
+    }
+
+    public Case[][] getMatricePlateau() {
+        return matricePlateau;
     }
 }
