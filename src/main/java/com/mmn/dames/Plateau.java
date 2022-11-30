@@ -65,15 +65,29 @@ public class Plateau {
         }
     }
 
-    public void clickOnGridPane(GridPane pane) {
+    public void clickOnCase(GridPane pane) {
         pane.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                double caseY = event.getY() / 100;
-                if(caseY > (int) (caseY) + 0.05){++caseY;}
-                if(caseY < (int) (caseY) + 0.05){--caseY;}
+                double caseYEvent = event.getY() / 100;
+                double caseXEvent = event.getX() / 100;
 
-                System.out.println("Vous avez cliqué sur " + caseY);
+                int caseY = 0;
+                int caseX = (int) caseXEvent;
+
+                //Ajustement des coordonées du clique pour obtenir la case correspondante en Y
+                if(caseYEvent < 1.09){caseY = 0;}
+                if(caseYEvent > 1.09 && caseYEvent < 1.95){caseY = 1;}
+                if(caseYEvent > 1.95 && caseYEvent < 2.8){caseY = 2;}
+                if(caseYEvent > 2.8 && caseYEvent < 3.6){caseY = 3;}
+                if(caseYEvent > 3.6 && caseYEvent < 4.5){caseY = 4;}
+                if(caseYEvent > 4.5 && caseYEvent < 5.3){caseY = 5;}
+                if(caseYEvent > 5.3 && caseYEvent < 6.2){caseY = 6;}
+                if(caseYEvent > 6.2 && caseYEvent < 7){caseY = 7;}
+                if(caseYEvent > 7 && caseYEvent < 7.9){caseY = 8;}
+                if(caseYEvent > 7.9){caseY = 9;}
+
+                System.out.println("Vous avez cliqué sur " + caseY + " " + caseX);
             }
         });
     }
