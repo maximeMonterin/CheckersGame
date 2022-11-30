@@ -6,7 +6,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
 import java.io.*;
-import java.util.List;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Plateau {
     //ATTRIBUTS
@@ -23,11 +26,12 @@ public class Plateau {
 
         int cptLigne = 0;
 
-        File filePlateau = new File("C:\\Users\\under\\IdeaProjects\\Dames\\plateau.txt");
-        Image brownCaseImg = new Image("C:\\Users\\under\\IdeaProjects\\Dames\\images\\brown_case.png");
-        Image skinCaseImg = new Image("C:\\Users\\under\\IdeaProjects\\Dames\\images\\skin_case.png");
+        File filePlateau = new File(getClass().getResource("/com/mmn/dames/plateau.txt").toExternalForm());
+        Image brownCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/brown_case.png").toExternalForm());
+        Image skinCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/skin_case.png").toExternalForm());
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePlateau), "UTF-8"));
+        BufferedReader reader = new BufferedReader(new FileReader(filePlateau));
+
         String line = reader.readLine();
 
         while(line != null){

@@ -22,7 +22,7 @@ public class Dames extends Application {
         stage.setResizable(false);
         stage.setTitle("Dames");
         stage.setScene(scene);
-        stage.getIcons().add(new Image("C:\\Users\\under\\IdeaProjects\\Dames\\images\\black_pion.png"));
+        stage.getIcons().add(new Image(getClass().getResource("/com/mmn/dames/images/black_pion.png").toExternalForm()));
         stage.show();
 
     }
