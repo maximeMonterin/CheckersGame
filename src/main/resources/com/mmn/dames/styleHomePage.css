@@ -1,0 +1,5 @@
+#root{
+    -fx-background-image: url("images/background_homepage.png");
+    -fx-background-size: 900 900;
+    -fx-background-position: center;
+}

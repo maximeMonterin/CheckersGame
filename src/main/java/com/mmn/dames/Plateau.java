@@ -23,8 +23,8 @@ public class Plateau {
     public Plateau() {}
 
     public void loadPlateauStructure(GridPane pane) throws IOException {
-        Image brownCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/brown_case.png").toExternalForm());
-        Image skinCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/skin_case.png").toExternalForm());
+        Image brownCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/brown_case.png").toExternalForm(), 85, 85, false, false);
+        Image skinCaseImg = new Image(getClass().getResource("/com/mmn/dames/images/skin_case.png").toExternalForm(), 85, 85, false, false);
 
         for(int ligne = 0; ligne < 10 ; ++ligne){
             Image currentImage;
