@@ -83,7 +83,7 @@ public class Plateau {
      * Cette méthode permet de récuprér la case que séléctionne le joueur
      */
     public Case clickOnCase(GridPane pane, Case[][] matricePlateau) {
-        Case currentCase = new Case(false, 0, 0);
+        Case currentCase = new Case();
         Pion pion = new Pion(0, 0, "Null");
         pane.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
 
@@ -120,6 +120,7 @@ public class Plateau {
                 currentCase.setColor('S');
                 pion.setCouleur("");
                 currentCase.setPion(null);
+                currentCase.setUsage(false);
 
                 if((caseY <= 3) && (matricePlateau[caseY][caseX].getColor() == 'M')){
                     pion.setCouleur("Noir"); pion.setPosX(caseX); pion.setPosY(caseY);

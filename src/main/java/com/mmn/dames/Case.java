@@ -15,12 +15,7 @@ public class Case {
         this.posY = posY;
     }
 
-    public Case(boolean usage, int posX, int posY, Pion pion) {
-        this.usage = usage;
-        this.posX = posX;
-        this.posY = posY;
-        this.pion = pion;
-    }
+    public Case() {}
 
     public boolean isUsage() {
         return usage;
