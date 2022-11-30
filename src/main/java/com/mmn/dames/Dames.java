@@ -15,7 +15,7 @@ public class Dames {
         Plateau plateau = new Plateau();
         plateau.loadPlateauStructure(pane);
         plateau.loadPlateauPion(pane);
-        plateau.clickOnCase(pane, plateau.getMatricePlateau());
+        Case currCase = plateau.clickOnPlateau(pane, plateau.getMatricePlateau());
 
         Scene scene = new Scene(pane, 900, 900);
 

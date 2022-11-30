@@ -82,7 +82,7 @@ public class Plateau {
      * clickOnCase(GridPane pane) {}
      * Cette méthode permet de récuprér la case que séléctionne le joueur
      */
-    public Case clickOnCase(GridPane pane, Case[][] matricePlateau) {
+    public Case clickOnPlateau(GridPane pane, Case[][] matricePlateau) {
         Case currentCase = new Case();
         Pion pion = new Pion(0, 0, "Null");
         pane.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -141,8 +141,19 @@ public class Plateau {
 
     }
 
+    public void pionMouvement(Case currentCase, GridPane pane){
+            System.out.println("test");
+            pane.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+                @Override
+                public void handle(MouseEvent event) {
+                    Case nextCase = clickOnPlateau(pane, getMatricePlateau());
+                    System.out.println("la prochaine case du pion choisi sera la case => [" + nextCase.toString() + ']');
+                }
+            });
+    }
+
     //GETTERS
     public Case[][] getMatricePlateau() {
-        return matricePlateau;
+        return this.matricePlateau;
     }
 }
