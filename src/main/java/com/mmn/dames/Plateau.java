@@ -89,6 +89,7 @@ public class Plateau {
 
             @Override
             public void handle(MouseEvent event) {
+                HomePage.setCLickCpt(HomePage.getClickCpt() + 1);
                 double caseYEvent = event.getY() / 100;
                 double caseXEvent = event.getX() / 100;
 
@@ -142,12 +143,14 @@ public class Plateau {
     }
 
     public void pionMouvement(Case currentCase, GridPane pane){
-            System.out.println("test");
+        HomePage.setCLickCpt(0);
             pane.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
                 @Override
                 public void handle(MouseEvent event) {
+                    HomePage.setCLickCpt(HomePage.getClickCpt() + 1);
                     Case nextCase = clickOnPlateau(pane, getMatricePlateau());
                     System.out.println("la prochaine case du pion choisi sera la case => [" + nextCase.toString() + ']');
+
                 }
             });
     }
@@ -156,4 +159,5 @@ public class Plateau {
     public Case[][] getMatricePlateau() {
         return this.matricePlateau;
     }
+
 }

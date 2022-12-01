@@ -8,12 +8,23 @@ import javafx.stage.Stage;
 
 public class HomePage extends Application {
 
+    private static int CLICK_CPT;
+
+    public static int getClickCpt() {
+        return CLICK_CPT;
+    }
+
+    public static void setCLickCpt(int value) {
+        CLICK_CPT = value;
+    }
+
     public static void main(String[] args) {
         launch();
     }
 
     @Override
     public void start(Stage stage) throws Exception {
+        CLICK_CPT = 0;
         VBox root = new HomePageController(stage);
 
         root.setId("root");
