@@ -16,9 +16,11 @@
 
 
 ```
-                                      =-=> Liste des autheurs <=-=
+                                           =-=> Liste des autheurs <=-=
 ```
 
 - [@Maxime Monterin](https://www.github.com/maximeMonterin)
+- [@Allan Delesvaux](https://github.com/AllanDelesvaux)
+- [@Bertil Pinel-Guinard](https://github.com/Bertil-pinel)
  
 
