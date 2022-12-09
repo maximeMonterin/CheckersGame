@@ -16,7 +16,7 @@
 
 
 ```
-                                           =-=> Liste des autheurs <=-=
+                                           =-=> Section des développeurs <=-=
 ```
 
 - [@Maxime Monterin](https://www.github.com/maximeMonterin)
