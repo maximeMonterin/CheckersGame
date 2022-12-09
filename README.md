@@ -7,7 +7,7 @@
 ```
 
 > __➀ Ouvrez un terminal dans le dossier où vous souahitez télécharger le jeu, puis executez la commande suivante:__\
-> git clone https://github.com/maximeMonterin/MMN_PROJECT.git
+> `git clone https://github.com/maximeMonterin/MMN_PROJECT.git`
 
 > __➁ Utilisez un logiciel d'édition de code (de préférence Intellij) puis ouvrez le dossier fraichement cloné à l'intérieur__
 
