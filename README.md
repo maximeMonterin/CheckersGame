@@ -18,6 +18,7 @@
 ```
                                              🚀 Section des développeurs
 ```
+Trois étudiants à l'IUT d'Aix-Marseille, sur le site d'Aix-en-Provence:
 
 - [@Maxime Monterin](https://www.github.com/maximeMonterin)
 - [@Allan Delesvaux](https://github.com/AllanDelesvaux)
