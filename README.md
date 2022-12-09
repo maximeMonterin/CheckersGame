@@ -16,7 +16,7 @@
 
 
 ```
-                                           =-=> 🚀 Section des développeurs <=-=
+                                             🚀 Section des développeurs
 ```
 
 - [@Maxime Monterin](https://www.github.com/maximeMonterin)
