@@ -20,8 +20,8 @@
 ```
 Trois étudiants à l'IUT d'Aix-Marseille, sur le site d'Aix-en-Provence:
 
-- [@Maxime Monterin](https://www.github.com/maximeMonterin)
 - [@Allan Delesvaux](https://github.com/AllanDelesvaux)
+- [@Maxime Monterin](https://www.github.com/maximeMonterin)
 - [@Bertil Pinel-Guinard](https://github.com/Bertil-pinel)
  
 
