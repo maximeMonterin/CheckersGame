@@ -12,5 +12,13 @@
 > __➁ Utilisez un logiciel d'édition de code (de préférence Intellij) puis ouvrez le dossier fraichement cloné à l'intérieur__
 
 > __③ Double cliquez sur le fichier main situé à gauche de la fenêtre d'Intellij, et cliquez sur la flèche verte située en haut à droite__
+
+
+
+```
+                                      =-=> Liste des autheurs <=-=
+```
+
+- [@Maxime Monterin](https://www.github.com/maximeMonterin)
  
 
