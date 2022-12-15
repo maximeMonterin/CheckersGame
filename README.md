@@ -1,9 +1,15 @@
 **JEU D'ECHECS**\
  ```PAR DELESVAUX PINEL-GUINARD MONTERIN```
  =
+ 
+```
+                                       👋 Présentation du projet
+```
+>Notre projet est un jeu d’échecs développé en Java, avec une interface graphique faite sous JavaSwing.\
+>Notre version du jeu possède les fonctionnalités classiques de la version originale, pour qu’elle puisse s’adapter aux débutants et aux joueurs confirmés.
 
 ```
-                                  ☝️ Comment télécharger le jeu ?
+                                       ☝️ Comment télécharger le jeu ?
 ```
 
 > __➀ Ouvrez un terminal dans le dossier où vous souahitez télécharger le jeu, puis executez la commande suivante:__\
@@ -17,7 +23,7 @@
 
 
 ```
-                                   🚀 Section des développeurs
+                                        🚀 Section des développeurs
 ```
 Trois étudiants à l'IUT d'Aix-Marseille, sur le site d'Aix-en-Provence:
 
